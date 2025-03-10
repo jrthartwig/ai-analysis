@@ -52,3 +52,41 @@ export default tseslint.config({
   },
 })
 ```
+
+# AI Analysis App
+
+This application provides AI-powered analysis tools for CSV and Excel data, including:
+- Key phrase extraction
+- Sentiment analysis
+- Chat with your data
+
+## Setup
+
+1. Install dependencies:
+```bash
+npm install
+```
+
+2. Create a `.env` file with your Azure credentials (see `.env.example`).
+
+## Running the application
+
+```bash
+npm run dev
+```
+
+The application will be available at http://localhost:5173 (or similar)
+
+## Architecture
+
+- Frontend: React with TypeScript and Tailwind CSS
+- Azure Services:
+  - Azure OpenAI for chat capabilities
+  - Azure AI Language for text analysis
+
+## Features
+
+- **Upload Data**: Support for CSV and Excel files
+- **Chat Interface**: Ask questions about your uploaded data
+- **Key Phrase Extraction**: Extract key phrases from your text data
+- **Sentiment Analysis**: Analyze sentiment of your text data
