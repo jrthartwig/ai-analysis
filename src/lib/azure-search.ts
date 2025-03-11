@@ -4,11 +4,11 @@ import axios from "axios";
 const proxyUrl = "http://localhost:3001";
 
 export class AzureSearchService {
-  private hasCredentials: boolean;
+  // Remove unused private hasCredentials property
   private currentIndexName: string = "";
   
   constructor() {
-    this.hasCredentials = true; // We'll use the proxy server which handles credentials
+    // Remove the hasCredentials initialization
   }
 
   async searchDocuments(query: string, top = 10): Promise<any[]> {

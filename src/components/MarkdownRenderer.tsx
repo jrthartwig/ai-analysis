@@ -9,6 +9,14 @@ interface MarkdownRendererProps {
   className?: string;
 }
 
+// Define interface for code element props to include the inline property
+interface CodeProps {
+  node?: any;
+  inline?: boolean;
+  className?: string;
+  children?: React.ReactNode;
+}
+
 export const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, className }) => {
   return (
     <div className={`markdown-content text-left ${className || ''}`}>
@@ -24,7 +32,7 @@ export const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, cla
           ol: ({ node, ...props }) => <ol className="list-decimal pl-6 mb-2 text-left" {...props} />,
           li: ({ node, ...props }) => <li className="mb-1 text-left" {...props} />,
           a: ({ node, ...props }) => <a className="text-primary hover:underline" {...props} />,
-          code: ({ node, inline, ...props }) => 
+          code: ({ node, inline, ...props }: CodeProps) => 
             inline ? 
               <code className="bg-gray-100 px-1 py-0.5 rounded text-sm" {...props} /> : 
               <code {...props} />,
