@@ -1,0 +1,24 @@
+{
+  "routes": [
+    {
+      "route": "/api/*",
+      "methods": ["GET", "POST", "PUT", "DELETE"],
+      "rewrite": "/api/index"
+    },
+    {
+      "route": "/*",
+      "serve": "/index.html",
+      "statusCode": 200
+    }
+  ],
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/images/*.{png,jpg,gif}", "/css/*", "/js/*"]
+  },
+  "globalHeaders": {
+    "content-security-policy": "default-src 'self'; connect-src 'self' https://*.openai.azure.com https://*.cognitiveservices.azure.com https://*.search.windows.net; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;"
+  },
+  "mimeTypes": {
+    ".json": "application/json"
+  }
+}
